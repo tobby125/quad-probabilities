@@ -3,38 +3,38 @@
 #include <time.h>
 
 int pow2(int n) {
-    if (n == 0) {
-        return 1;
-    }
-    return 2 * pow2(n - 1);
+	if (n == 0) {
+		return 1;
+	}
+	return 2 * pow2(n - 1);
 }
 
 long long fact(int n, int stop) {
-    if (n < 0) {
-        printf("Error");
-        exit(-1);
-    }
-    if (n == stop) {
-        return 1;
-    }
-    return n * fact(n - 1, stop);
+	if (n < 0) {
+		printf("Error");
+		exit(-1);
+	}
+	if (n == stop) {
+		return 1;
+	}
+	return n * fact(n - 1, stop)
 }
 
 long long choose(int n, int k) {
-    return fact(n, n - k) / fact(k, 0);
+	return fact(n, n - k) / fact(k, 0);
 }
 
 int is_quad(int *deal, int k) {
-    for (int a = 0; a < k; a++) {
-        for (int b = a + 1; b < k; b++) {
-            for (int c = b + 1; c < k; c++) {
-                for (int d = c + 1; d < k; d++) {
-                    if (!(deal[a] ^ deal[b] ^ deal[c] ^ deal[d])) return 1;
-                }
-            }
-        }
-    }
-    return 0;
+	for (int a = 0; a < k; a++) {
+		for (int b = a + 1; b < k; b++) {
+			for (int c = b + 1; c < k; c++) {
+				for (int d = c + 1; d < k; d++) {
+					if (!(deal[a] ^ deal[b] ^ deal[c] ^ deal[d])) return 1;
+				}
+			}
+		}
+	}
+	return 0;
 }
 
 void random_deal(int *deal, int deck_size, int k) {
