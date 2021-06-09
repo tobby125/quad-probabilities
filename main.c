@@ -17,7 +17,7 @@ long long fact(int n, int stop) {
 	if (n == stop) {
 		return 1;
 	}
-	return n * fact(n - 1, stop)
+	return n * fact(n - 1, stop);
 }
 
 long long choose(int n, int k) {
